@@ -1,0 +1,24 @@
+# Local credentials and runtime environment files
+.env
+.env.*
+!.env.example
+env
+.dev.vars
+
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.tanstack/
+.nitro/
+.wrangler/
+
+# Logs and local editor state
+*.log
+logs/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
