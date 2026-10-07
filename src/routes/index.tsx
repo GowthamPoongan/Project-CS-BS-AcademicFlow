@@ -44,7 +44,7 @@ function Welcome() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white flex items-center justify-center px-4 py-6">
+    <div className="relative h-[100dvh] overflow-hidden bg-white flex items-center justify-center px-4">
       {/* Subtle gradient background */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-purple-50/40 via-white to-indigo-50/30" />
 
@@ -52,30 +52,23 @@ function Welcome() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative w-full max-w-md mx-auto"
+        className="relative w-full max-w-md mx-auto flex flex-col justify-center max-h-full py-4"
       >
-        {/* Skip link */}
-        <div className="flex justify-end mb-4">
-          <Link to="/auth" className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-purple-600 transition-colors">
-            Skip <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-
         {/* Header */}
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl overflow-hidden shadow-sm">
+        <div className="flex flex-col items-center text-center mb-5 mt-2">
+          <div className="flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden shadow-sm mb-3">
             <img src="/new logo.jpeg" alt="Logo" className="w-full h-full object-cover" />
           </div>
+          <h1 className="text-3xl font-bold text-gray-900 leading-tight">
+            <span className="text-purple-600">CS&BS</span> AcademicFlow
+          </h1>
+          <p className="mt-1.5 text-gray-600 text-sm leading-relaxed">
+            Your Complete Academic Journey<br />in One Place
+          </p>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 leading-tight">
-          <span className="text-purple-600">CS&BS</span> AcademicFlow
-        </h1>
-        <p className="mt-2 text-gray-600 text-base leading-relaxed">
-          Your Complete Academic Journey<br />in One Place
-        </p>
 
         {/* Feature grid */}
-        <div className="mt-6 grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-2.5">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -100,9 +93,9 @@ function Welcome() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="relative mt-6 rounded-2xl bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 p-6 overflow-hidden"
+          className="relative mt-4 rounded-2xl bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 p-4 overflow-hidden"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {/* Verified-data badge — intentionally no sample academic values. */}
             <div className="flex-shrink-0">
               <div className="bg-white rounded-2xl shadow-md p-3 text-center">
@@ -113,7 +106,7 @@ function Welcome() {
             </div>
             {/* Student illustration */}
             <div className="flex-1 flex justify-center">
-              <img src="/student-hero.png" alt="Student" className="h-36 object-contain drop-shadow-lg" />
+              <img src="/student-hero.png" alt="Student" className="h-28 object-contain drop-shadow-lg" />
             </div>
           </div>
 
@@ -140,7 +133,7 @@ function Welcome() {
         </motion.div>
 
         {/* Tagline */}
-        <p className="mt-5 text-center text-sm font-medium text-gray-400 tracking-wide">
+        <p className="mt-4 text-center text-xs font-medium text-gray-400 tracking-wide">
           Build • Store • Search • Analyze • Grow
         </p>
 
@@ -149,7 +142,7 @@ function Welcome() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mt-4"
+          className="mt-3 shrink-0"
         >
           <Button asChild size="lg" className="w-full h-14 text-base font-semibold rounded-2xl btn-gradient relative group">
             <Link to="/auth" className="flex items-center justify-center gap-2">
@@ -170,9 +163,9 @@ function Welcome() {
         </motion.div>
 
         {/* Footer */}
-        <div className="mt-6 text-center">
-          <p className="text-xs text-gray-400">A Department Academic Digital Platform</p>
-          <p className="text-xs font-medium text-purple-500">A trusted academic workspace</p>
+        <div className="mt-4 mb-2 text-center shrink-0">
+          <p className="text-[10px] text-gray-400">A Department Academic Digital Platform</p>
+          <p className="text-[10px] font-medium text-purple-500">A trusted academic workspace</p>
         </div>
       </motion.div>
     </div>
